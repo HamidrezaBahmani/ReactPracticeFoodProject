@@ -10,5 +10,5 @@ const CartContext = React.createContext({
   addItem: (item) => {},
   removeItem: (id) => {},
 });
-//4-
+//4-export default CartContext; goto(CartProvider for 5-)
 export default CartContext;

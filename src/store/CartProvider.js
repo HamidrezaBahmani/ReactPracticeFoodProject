@@ -17,6 +17,7 @@ const defaultCartState = {
 //16-cartReducer should be outside CartProvider component since it won't need anything from it
 // action will be dispatch in our code
 const cartReducer = (state, action) => {
+  //21 here we can check dispached action and update state(End)
   if (action.type === "ADD") {
     const updatedItems = state.items.concat(action.item);
     const updatedTotalAmount =
@@ -63,10 +64,10 @@ const CartProvider = (props) => {
     //19-now we can set dynamic data use latest snapshot of state=>cartState
     items: cartState.items,
     totalAmount: cartState.totalAmount,
-    addItems: addItemToCartHandler,
+    addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
-  //10-now set this cartContext as value for <CartContext.Provider value={cartContext}>
+  //10-now set this cartContext as value for <CartContext.Provider value={cartContext}> goto(App.js for 11-)
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}

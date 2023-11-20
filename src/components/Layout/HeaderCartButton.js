@@ -6,7 +6,7 @@ import CartIcon from "../Cart/CartIcon";
 import CartContext from "../../store/cart-context";
 import classes from "./HeaderCartButton.module.css";
 const HeaderCartButton = (props) => {
-  //14-here by using useContext and send CartContext we can access data(we stablished connection)
+  //14-here by using useContext and send CartContext we can access data(we stablished connection)  (goto CartProvider for 15-)
   //when the context changes react will automatically reevalute this component
   const cartCtx = useContext(CartContext);
   //curNumber=total

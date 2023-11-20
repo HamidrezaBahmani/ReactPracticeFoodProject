@@ -13,7 +13,7 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShow(false);
   };
-  //11-Warp all needed component with <CartProvider> to accees them
+  //11-Warp all needed component with <CartProvider> to accees them (goto HeaderCartButton for 12)
   //use data
   return (
     <CartProvider>
