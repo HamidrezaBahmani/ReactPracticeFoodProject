@@ -65,6 +65,9 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     };
   }
+  if (action.type === "CLEAR") {
+    return defaultCartState;
+  }
 
   return defaultCartState;
 };
@@ -98,6 +101,11 @@ const CartProvider = (props) => {
   const removeItemFromCartHandler = (id) => {
     dispatchCartAction({ type: "REMOVE", id: id });
   };
+
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: "CLEAR" });
+  };
+
   //8-create helper cartContext obj this is actully update over time
   const cartContext = {
     //19-now we can set dynamic data use latest snapshot of state=>cartState
@@ -105,6 +113,7 @@ const CartProvider = (props) => {
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    clearCart: clearCartHandler,
   };
   //10-now set this cartContext as value for <CartContext.Provider value={cartContext}> goto(App.js for 11-)
   return (
